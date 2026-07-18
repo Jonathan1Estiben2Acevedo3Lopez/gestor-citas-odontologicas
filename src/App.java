@@ -1,7 +1,15 @@
 public class App {
 
     public static void main(String[] args) {
-        System.out.println("Gestor de citas odontológicas");
-        System.out.println("Entorno Java configurado correctamente");
+
+        String patientName = "Jonathan";
+        int patientAge = 23;
+        String patientEmail = "jonathan@example.com";
+        boolean hasScheduledAppointment = true;
+
+        System.out.println("Nombre: " + patientName);
+        System.out.println("Edad: " + patientAge);
+        System.out.println("Correo: " + patientEmail);
+        System.out.println("Tiene cita programada: " + hasScheduledAppointment);
     }
 }
