@@ -3,7 +3,7 @@ public class App {
     public static void main(String[] args) {
 
         String patientName = "Jonathan";
-        int patientAge = 18;
+        int patientAge = 126;
         String patientEmail = "jonathan@example.com";
         boolean hasScheduledAppointment = true;
 
@@ -17,7 +17,7 @@ public class App {
             System.out.println("No tiene cita programada");
         }
 
-        if (patientAge < 0) {
+        if (patientAge < 0 || patientAge > 125) {
             System.out.println("Edad no válida");
         } else if (patientAge < 18){
             System.out.println("El paciente es menor de edad");
