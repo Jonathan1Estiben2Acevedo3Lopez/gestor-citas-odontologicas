@@ -17,10 +17,12 @@ public class App {
             System.out.println("No tiene cita programada");
         }
 
-        if (patientAge >= 18) {
-            System.out.println("El paciente es mayor de edad");
-        } else {
+        if (patientAge < 0) {
+            System.out.println("Edad no válida");
+        } else if (patientAge < 18){
             System.out.println("El paciente es menor de edad");
+        }else {
+            System.out.println("El paciente es mayor de edad");
         }
 
     }
