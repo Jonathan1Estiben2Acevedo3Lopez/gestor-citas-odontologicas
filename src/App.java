@@ -1,8 +1,15 @@
+import java.util.Scanner;
+
 public class App {
 
     public static void main(String[] args) {
 
-        String patientName = "Jonathan";
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingresa el nombre del paciente: ");
+        String patientName = scanner.nextLine();
+
+
         int patientAge = 23;
         String patientEmail = "jonathan@example.com";
         boolean hasScheduledAppointment = true;
@@ -25,5 +32,6 @@ public class App {
         } else {
             System.out.println("El paciente es mayor de edad");
         }
+        scanner.close();
     }
 }
