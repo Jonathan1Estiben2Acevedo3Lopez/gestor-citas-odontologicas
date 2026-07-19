@@ -10,6 +10,12 @@ public class App {
         System.out.println("Nombre: " + patientName);
         System.out.println("Edad: " + patientAge);
         System.out.println("Correo: " + patientEmail);
-        System.out.println("Tiene cita programada: " + hasScheduledAppointment);
+
+        if (hasScheduledAppointment) {
+            System.out.println("Tiene cita programada");
+        } else {
+            System.out.println("No tiene cita programada");
+        }
+
     }
 }
