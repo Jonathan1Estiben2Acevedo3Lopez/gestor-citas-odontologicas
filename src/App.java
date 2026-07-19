@@ -3,9 +3,10 @@ public class App {
     public static void main(String[] args) {
 
         String patientName = "Jonathan";
-        int patientAge = 126;
+        int patientAge = 23;
         String patientEmail = "jonathan@example.com";
         boolean hasScheduledAppointment = true;
+        boolean isAgeWithinAllowedRange = patientAge >= 0 && patientAge <= 125;
 
         System.out.println("Nombre: " + patientName);
         System.out.println("Edad: " + patientAge);
@@ -17,13 +18,12 @@ public class App {
             System.out.println("No tiene cita programada");
         }
 
-        if (patientAge < 0 || patientAge > 125) {
+        if (!isAgeWithinAllowedRange) {
             System.out.println("Edad no válida");
-        } else if (patientAge < 18){
+        } else if (patientAge < 18) {
             System.out.println("El paciente es menor de edad");
-        }else {
+        } else {
             System.out.println("El paciente es mayor de edad");
         }
-
     }
 }
