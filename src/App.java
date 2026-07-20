@@ -32,7 +32,20 @@ public class App {
             }
         }
 
-        String patientEmail = "jonathan@example.com";
+        String patientEmail = "";
+        boolean isEmailInputValid = false;
+
+        while (!isEmailInputValid) {
+            System.out.print("Ingrese el correo del paciente: ");
+            patientEmail = scanner.nextLine();
+
+            if (!patientEmail.isBlank() && patientEmail.contains("@")) {
+                isEmailInputValid = true;
+            } else {
+                System.out.println("El correo no puede estar vacío y debe contener @.");
+            }
+        }
+
         boolean hasScheduledAppointment = true;
 
         System.out.println("Nombre: " + patientName);
