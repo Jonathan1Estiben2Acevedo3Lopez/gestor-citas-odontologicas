@@ -11,8 +11,16 @@ public class App {
 
         System.out.print("Digite la edad del paciente: ");
         String ageText = scanner.nextLine();
-        int patientAge = Integer.parseInt(ageText);
 
+        int patientAge;
+
+        try {
+            patientAge = Integer.parseInt(ageText);
+        } catch (NumberFormatException exception) {
+            System.out.println("La edad debe ser un número entero");
+            scanner.close();
+            return;
+        }
 
         String patientEmail = "jonathan@example.com";
         boolean hasScheduledAppointment = true;
