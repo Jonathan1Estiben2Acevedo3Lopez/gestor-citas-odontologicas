@@ -9,8 +9,11 @@ public class App {
         System.out.print("Ingresa el nombre del paciente: ");
         String patientName = scanner.nextLine();
 
+        System.out.print("Digite la edad del paciente: ");
+        String ageText = scanner.nextLine();
+        int patientAge = Integer.parseInt(ageText);
 
-        int patientAge = 23;
+
         String patientEmail = "jonathan@example.com";
         boolean hasScheduledAppointment = true;
         boolean isAgeWithinAllowedRange = patientAge >= 0 && patientAge <= 125;
