@@ -9,22 +9,31 @@ public class App {
         System.out.print("Ingresa el nombre del paciente: ");
         String patientName = scanner.nextLine();
 
-        System.out.print("Digite la edad del paciente: ");
-        String ageText = scanner.nextLine();
+        int patientAge = 0;
+        boolean isAgeInputValid = false;
 
-        int patientAge;
+        while (!isAgeInputValid) {
 
-        try {
-            patientAge = Integer.parseInt(ageText);
-        } catch (NumberFormatException exception) {
-            System.out.println("La edad debe ser un número entero");
-            scanner.close();
-            return;
+            System.out.print("Digite la edad del paciente: ");
+            String ageText = scanner.nextLine();
+
+            try {
+                patientAge = Integer.parseInt(ageText);
+                boolean isAgeWithinAllowedRange = patientAge >= 0 && patientAge <= 125;
+
+                if (!isAgeWithinAllowedRange) {
+                    System.out.println("Edad no válida. La edad debe estar entre 0 y 125.");
+                } else {
+                    isAgeInputValid = true;
+                }
+
+            } catch (NumberFormatException exception) {
+                System.out.println("La edad debe ser un número entero.");
+            }
         }
 
         String patientEmail = "jonathan@example.com";
         boolean hasScheduledAppointment = true;
-        boolean isAgeWithinAllowedRange = patientAge >= 0 && patientAge <= 125;
 
         System.out.println("Nombre: " + patientName);
         System.out.println("Edad: " + patientAge);
@@ -36,9 +45,7 @@ public class App {
             System.out.println("No tiene cita programada");
         }
 
-        if (!isAgeWithinAllowedRange) {
-            System.out.println("Edad no válida");
-        } else if (patientAge < 18) {
+        if (patientAge < 18) {
             System.out.println("El paciente es menor de edad");
         } else {
             System.out.println("El paciente es mayor de edad");
